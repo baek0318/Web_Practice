@@ -40,10 +40,15 @@ function makeList(text, id) {
   //리스트에 들어갈 li를 만드는 함수
   const li = document.createElement("li");
   li.id = id;
+  li.classList.add('list-element');
   const span = document.createElement("span");
   span.innerText = text;
   const checkBtn = document.createElement("button");
-  checkBtn.innerText = "완료";
+  const i = document.createElement('i');
+  i.classList.add('fas');
+  i.classList.add('fa-check-circle');
+  i.style.content = '\f058';
+  checkBtn.appendChild(i);
   
   removeToList(checkBtn);
   li.appendChild(checkBtn);
@@ -67,8 +72,17 @@ function addToList() {
 function removeToList(checkBtn) {
   //todo-list에 끝난 할일을 삭제하는 함수
   checkBtn.addEventListener('click', (event) => {
-    const btn = event.toElement;
-    const li = btn.parentElement;
+    let btn, li, i;
+
+    if(event.toElement.localName === 'i'){
+      i = event.toElement;
+      btn = i.parentElement;
+      li = btn.parentElement;
+    }
+    else if(event.toElement.localName === 'button'){
+      btn = event.toElement;
+      li = btn.parentElement;
+    }
     
     //listArr에서 데이터를 삭제하는 방법
     const result = listArr.filter((list) => {
