@@ -106,9 +106,3 @@ function setListToStorage(list) {
   localStorage.setItem(DATA, JSON.stringify(list));
 }
 
-function init() {
-    checkToDoList();
-}
-
-init();
-

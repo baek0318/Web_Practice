@@ -1,6 +1,7 @@
 const inputNameForm = document.querySelector('.input-name');
 const name = inputNameForm.querySelector('.name');
 const h1 = document.querySelector('h1');
+const wrap = document.querySelector('.wrap');
 
 const USER = 'currentUser';
 const USER_EXIST = 'exist';
@@ -17,7 +18,7 @@ function checkUserName() {
 }
 
 function setUserName() {
-  inputForm.hidden = true;
+  wrap.removeChild(inputForm);
   inputNameForm.addEventListener('submit', (event) => {
     event.preventDefault();
     localStorage.setItem(USER, name.value);
@@ -30,6 +31,8 @@ function setUserName() {
     }
     else {
       setUserNameToTitle(user, exist);
+      wrap.removeChild(inputNameForm);
+      wrap.appendChild(inputForm);
     }
   });
 }
@@ -37,11 +40,13 @@ function setUserName() {
 function setUserNameToTitle(user, exist) {
   h1.innerText = `${user}의 `+h1.innerText;
   inputNameForm.hidden = exist;
-  inputForm.hidden = !exist;
+  wrap.removeChild(inputNameForm);
+  wrap.appendChild(inputForm);
 }
 
 function init() {
   checkUserName();
+  checkToDoList();
 }
 
 init();
