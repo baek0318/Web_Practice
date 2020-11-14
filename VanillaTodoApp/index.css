@@ -106,10 +106,6 @@ ul li span {
   margin: auto;
 }
 
-ul li button i{
-
-}
-
 @media screen and (max-width: 800px) {
   .wrap {
     width: 90%;
