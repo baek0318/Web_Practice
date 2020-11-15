@@ -16,8 +16,7 @@ h1 {
   background-color: #ff8a65;
   text-align: center;
   border-radius: 10px;
-  height: 60px;
-  padding-top: 25px;
+  padding: 10px 0;
 }
 
 .input-name {
@@ -27,7 +26,7 @@ h1 {
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
-  padding: 5px 5px 5px 5px;
+  padding: 5px;
 }
 
 .input-name .name {
@@ -64,7 +63,7 @@ h1 {
   margin-top: 15px;
   margin: auto;
   height: 80%;
-  width: 75%;
+  width: 60%;
   border-radius: 10px;
   font-size: 17px;
   background-color: #ffab91;
@@ -74,10 +73,13 @@ h1 {
   border: 0;
   border-radius: 10px;
   background-color: #ffccbc;
-  
   font-size: 20px;
   font-weight: 600;
-  width: 80px;
+  width: 100px;
+}
+
+.enter:hover {
+  background-color: #fd997a;
 }
 
 ul {
@@ -89,9 +91,7 @@ ul {
 
 ul li {
   display: flex;
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-bottom: 10px;
+  padding: 10px 5px;
 }
 
 ul li button {
@@ -109,5 +109,8 @@ ul li span {
 @media screen and (max-width: 800px) {
   .wrap {
     width: 90%;
+  }
+  .enter {
+    width: 30%;
   }
 }
