@@ -61,11 +61,16 @@ function addToList() {
   //todo-list에 할 일 목록을 저장하는 함수
   inputForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    const id = makeID();
-    toDoList.appendChild(makeList(input.value, id));
-    listArr.push(setObject(id, input.value));
-    setListToStorage(listArr);
-    input.value = "";
+    if(input.value === '' || input.value === null) {
+      alert('아무것도 입력하지 않았습니다');
+    }
+    else {
+      const id = makeID();
+      toDoList.appendChild(makeList(input.value, id));
+      listArr.push(setObject(id, input.value));
+      setListToStorage(listArr);
+      input.value = "";
+    }
   })
 }
 
